@@ -1,0 +1,13 @@
+
+CDmetaPOP Release 2020.05.12-14:27:01MST Version version 1.52
+
+Author(s): Erin L Landguth, Casey Day, Andrew Bearlin
+
+Session runtime inputs from: ../..//PopVars_yct_5patch.csv
+
+
+DoUserInput(): 0:00:00
+DoPreProcess(): 0:00:00.124000
+GetMetrics() Initial: 0:00:00.006000
+The file ind-1.csv has been created
+DoUpdate(): 0:00:00.012000
