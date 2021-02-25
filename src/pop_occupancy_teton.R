@@ -15,7 +15,7 @@ library(maptools)
 data_counts = list.files(pattern = "ind9|ind49", 
                          full.names = TRUE, 
                          recursive = TRUE, 
-                         include.dirs = TRUE) %>% 
+                         include.dirs = TRUE) %>%
   map_df(function(x) read_csv(x, col_types = cols(.default = "c")) %>% mutate(filename=gsub(".csv","",basename(x))))
 
 #navigate back to main project directory
@@ -42,7 +42,7 @@ test <- ggplot(data = data_df, aes(x = age)) +
   xlab("Variable") + #change as needed
   theme_bw(base_size = 14)
 
-ggsave(plot = test, path = "outputs/plots/", filename="test.png",
+ggsave(plot = test, path = "C:/Users/burnmore/Documents/GitHub/YCT_ABM/outputs/plots", filename="test.png",
        width = 10, height = 10, units = "in", dpi=400)
 
 
@@ -64,7 +64,8 @@ p <- ggmap(map)
 
 #for points, need to change UTM to LONG LAT and add back in n
 coordinates(for_viz) <- ~XCOORD+YCOORD #establish coordinates
-data_viz_UTM <- SpatialPoints(for_viz, proj4string=CRS("+proj=utm +zone=11 +datum=WGS84")) #set CRS info
+data_viz_UTM <- SpatialPoints(for_viz, proj4string=CRS("+proj=utm +zone=11 +datum=WGS84"))
+#set CRS info
 data_viz_LONGLAT <- spTransform(data_viz_UTM, CRS("+proj=longlat +datum=WGS84")) #transform to match Google map
 data_viz_ll_df <- as.data.frame(data_viz_LONGLAT) #convert to data frame for ggplot
 data_viz_ll_df$n <- for_viz$n #add back in count data
