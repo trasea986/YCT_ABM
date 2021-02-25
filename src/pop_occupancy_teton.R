@@ -64,8 +64,12 @@ p <- ggmap(map)
 
 #for points, need to change UTM to LONG LAT and add back in n
 coordinates(for_viz) <- ~XCOORD+YCOORD #establish coordinates
+<<<<<<< HEAD
 data_viz_UTM <- SpatialPoints(for_viz, proj4string=CRS("+proj=utm +zone=11 +datum=WGS84"))
 #set CRS info
+=======
+data_viz_UTM <- sp::SpatialPoints(for_viz, proj4string=CRS("+proj=utm +zone=11 +datum=WGS84")) #set CRS info
+>>>>>>> a28f1d300694be315072c544dbcad8c98b1d19b1
 data_viz_LONGLAT <- spTransform(data_viz_UTM, CRS("+proj=longlat +datum=WGS84")) #transform to match Google map
 data_viz_ll_df <- as.data.frame(data_viz_LONGLAT) #convert to data frame for ggplot
 data_viz_ll_df$n <- for_viz$n #add back in count data
