@@ -57,7 +57,9 @@ group_by(PatchID, XCOORD, YCOORD, Year, .drop = FALSE) %>%
 #bottom left: 111.3488931째W 43.6781923째N 
 #top right: 111.0184507째W 43.9036550째N 
 
-map <- get_map(c(left = -111.3488931, bottom = 43.6781923, top = 43.9036550, right = -111.0184507))
+#Full extent: bottom left 111.9298664캷 43.4955923캮 ; top right 110.8556670캷 44.0104068캮 
+
+map <- get_map(c(left = -111.9298664, bottom = 43.4955923, top = 44.0104068, right = -110.8556670))
 
 #create object out of the Google map
 p <- ggmap(map)
@@ -107,6 +109,6 @@ for (i in unique(data_viz_ll_df$Year)) {
   theme_bw(base_size = 16)+
   theme(legend.position = "none")
   
-  ggsave(myplot, filename=paste("Teton_Year",i,".png",sep=""), path = "outputs/plots/", dpi = 400, width = 10, height = 10, units = "in")
+  ggsave(myplot, filename=paste("Teton_Year",i,".png",sep=""), path = "outputs/plots/plots_50patch_BNTMortality/", dpi = 400, width = 10, height = 10, units = "in")
   
 }
