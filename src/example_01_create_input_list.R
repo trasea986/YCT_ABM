@@ -34,4 +34,4 @@ PopVar_Names <- file_names %>%
 
 
 
-#write.csv(PopVar_Names, "PatchVar_List.csv", row.names = FALSE)
+write.csv(PopVar_Names, "PatchVar_List.csv", row.names = FALSE)

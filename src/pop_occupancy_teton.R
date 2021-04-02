@@ -109,6 +109,6 @@ for (i in unique(data_viz_ll_df$Year)) {
   theme_bw(base_size = 16)+
   theme(legend.position = "none")
   
-  ggsave(myplot, filename=paste("Teton_Year",i,".png",sep=""), path = "outputs/plots/plots_50patchV2_BNTMortality/", dpi = 400, width = 10, height = 10, units = "in")
+  ggsave(myplot, filename=paste("Teton_Year",i,".png",sep=""), path = "outputs/plots/plots_50patch_BNTHybrids/", dpi = 400, width = 10, height = 10, units = "in")
   
 }
